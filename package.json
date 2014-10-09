@@ -1,17 +1,17 @@
 {
-  "name": "mean-template",
+  "name": "brownie",
   "version": "0.0.0",
-  "description": "The MEAN Template",
+  "description": "Brownie Points",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nss-cohort-2014-06-07/mean-template"
+    "url": "https://github.com/mlfryman/brownie"
   },
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "author": "Melanie Fryman <melanie@frymanet.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nss-cohort-2014-06-07/mean-template/issues"
+    "url": "https://github.com/mlfryman/brownie/issues"
   },
-  "homepage": "https://github.com/nss-cohort-2014-06-07/mean-template",
+  "homepage": "https://github.com/mlfryman/brownie",
   "dependencies": {
     "async": "^0.9.0",
     "bcrypt": "^0.8.0",
