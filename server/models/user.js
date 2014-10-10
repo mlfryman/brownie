@@ -1,7 +1,12 @@
 'use strict';
 
-var bcrypt = require('bcrypt'),
-    Mongo  = require('mongodb');
+var bcrypt  = require('bcrypt'),
+    // Message = require('./message'),
+    // async   = require('async'),
+    // _       = require('underscore'),
+    // fs      = require('fs'),
+    // path    = require('path'),
+    Mongo   = require('mongodb');
 
 function User(){
 }
@@ -17,7 +22,7 @@ User.findById = function(id, cb){
 
 User.register = function(o, cb){
   User.collection.findOne({email:o.email}, function(err, user){
-    if(user || o.password.length < 3){return cb();}
+    if(user || o.password.length < 6){return cb();}
     o.password = bcrypt.hashSync(o.password, 10);
     User.collection.save(o, cb);
   });

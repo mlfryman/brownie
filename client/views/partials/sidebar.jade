@@ -1,0 +1,45 @@
+// Main Sidebar
+#sidebar
+  // Sidebar Brand
+  #sidebar-brand.themed-background
+    a.sidebar-title(href='/')
+      i.fa.fa-star
+      span.sidebar-nav-mini-hide
+        | Brownie Points
+   //  Wrapper for scrolling functionality
+  #sidebar-scroll
+    // Sidebar Content
+    .sidebar-content
+      // Sidebar Navigation
+      ul.sidebar-nav
+        li
+          a(href='/#/dashboard')
+            i.gi.gi-compass.sidebar-nav-icon
+            span.sidebar-nav-mini-hide Dashboard
+        li.sidebar-separator
+          i.fa.fa-ellipsis-h
+        li
+          a(href='/#/inbox')
+            i.gi.gi-inbox.sidebar-nav-icon
+            span.sidebar-nav-mini-hide Inbox
+        li
+          a(href='/#/profile')
+            i.fa.fa-share-alt.sidebar-nav-icon
+            span.sidebar-nav-mini-hide Profile
+        li
+          a(href='/#/prizes')
+            i.gi.gi-picture.sidebar-nav-icon
+            span.sidebar-nav-mini-hide Prizes
+        li
+          a(href='/#/search')
+            i.gi.gi-search.sidebar-nav-icon
+            span.sidebar-nav-mini-hide Find Users
+      // END Sidebar Navigation
+  // Sidebar Extra Info
+  #sidebar-extra-info.sidebar-content.sidebar-nav-mini-hide
+    .text-center
+      small
+        span#year-copy
+        | &copy
+        | Melanie L. Fryman
+

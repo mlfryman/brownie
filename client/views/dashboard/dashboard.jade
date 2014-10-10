@@ -1,1 +1,212 @@
-.page.page-dashboard(data-ng-controller='DashboardCtrl')
+
+// First Row
+.row(data-ng-controller='DashboardCtrl')
+  // Simple Stats Widgets
+  .col-sm-6.col-lg-3
+    a.widget(href='javascript:void(0)')
+      .widget-content.widget-content-mini.themed-background-success.text-light-op
+        i.fa.fa-clock-o
+        strong Today
+      .widget-content.text-right.clearfix
+        .widget-icon.pull-left
+          i.gi.gi-user.text-muted
+        h2.widget-heading.h3.text-success
+          i.fa.fa-plus
+          strong
+            span(data-toggle='counter', data-to='2862')
+        span.text-muted NEW USERS
+  .col-sm-6.col-lg-3
+    a.widget(href='javascript:void(0)')
+      .widget-content.widget-content-mini.themed-background-warning.text-light-op
+        i.fa.fa-clock-o
+        strong Last Month
+      .widget-content.text-right.clearfix
+        .widget-icon.pull-left
+          i.gi.gi-briefcase.text-muted
+        h2.widget-heading.h3.text-warning
+          i.fa.fa-plus
+          strong
+            span(data-toggle='counter', data-to='75')
+        span.text-muted PROJECTS
+  .col-sm-6.col-lg-3
+    a.widget(href='javascript:void(0)')
+      .widget-content.widget-content-mini.themed-background-danger.text-light-op
+        i.fa.fa-clock-o
+        strong Last Month
+      .widget-content.text-right.clearfix
+        .widget-icon.pull-left
+          i.gi.gi-wallet.text-muted
+        h2.widget-heading.h3.text-danger
+          i.fa.fa-dollar
+          strong
+            span(data-toggle='counter', data-to='5820')
+        span.text-muted EARNINGS
+  .col-sm-6.col-lg-3
+    a.widget(href='javascript:void(0)')
+      .widget-content.widget-content-mini.themed-background.text-light-op
+        i.fa.fa-clock-o
+        strong Last Month
+      .widget-content.text-right.clearfix
+        .widget-icon.pull-left
+          i.gi.gi-cardio.text-muted
+        h2.widget-heading.h3
+          strong
+            span(data-toggle='counter', data-to='2835')
+        span.text-muted SALES
+  // END Simple Stats Widgets
+// END First Row
+// Second Row
+.row
+  .col-sm-6.col-lg-4
+    // Stats User Widget
+    a.widget(href='javascript:void(0)')
+      .widget-content.widget-content-mini.themed-background-dark.text-light-op
+        i.fa.fa-fw.fa-trophy
+        strong Creator of the day
+      .widget-content.text-center
+        img.img-circle.img-thumbnail.img-thumbnail-avatar-2x(src='/vendor/template/img/placeholders/avatars/avatar13@2x.jpg', alt='avatar')
+        h2.widget-heading.h3.text-muted Anna Wigren
+      .widget-content.themed-background-muted.text-dark.text-center
+        strong Logo Designer
+        | , Sweden
+      .widget-content
+        .row.text-center
+          .col-xs-4
+            h3.widget-heading
+              i.gi.gi-share_alt.text-success.push-bit
+              br
+              small 58.6k Followers
+          .col-xs-4
+            h3.widget-heading
+              i.gi.gi-briefcase.text-info.push-bit
+              br
+              small 35 Projects
+          .col-xs-4
+            h3.widget-heading
+              i.gi.gi-heart_empty.text-danger.push-bit
+              br
+              small 5.3k Likes
+    // END Stats User Widget
+    // Mini Widgets Row
+    .row
+      .col-xs-6
+        a.widget.text-center(href='javascript:void(0)')
+          .widget-content.themed-background-info.text-light-op.text-center
+            .widget-icon.center-block.push
+              i.fa.fa-facebook
+            strong 98k Likes
+      .col-xs-6
+        a.widget(href='javascript:void(0)')
+          .widget-content.themed-background-danger.text-light-op.text-center
+            .widget-icon.center-block.push
+              i.fa.fa-database
+            strong 3 Servers
+    // END Mini Widgets Row
+// END Second Row
+// Third Row
+.row
+  .col-lg-8
+    .row
+      .col-sm-6
+        // Project Widget
+        .widget
+          .widget-content.widget-content-mini.themed-background-dark.text-light-op
+            span.pull-right.text-muted 60%
+            i.fa.fa-fw.fa-check
+            |  Custom Project
+          a.widget-content.text-right.clearfix(href='javascript:void(0)')
+            img.img-circle.img-thumbnail.img-thumbnail-avatar.pull-left(src='/vendor/template/img/placeholders/avatars/avatar6.jpg', alt='avatar')
+            h2.widget-heading.h3.text-muted Logo
+            .progress.progress-striped.progress-mini.active
+              .progress-bar.progress-bar-success(role='progressbar', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100', style='width: 85%')
+          a.widget-content.text-right.clearfix(href='javascript:void(0)')
+            img.img-circle.img-thumbnail.img-thumbnail-avatar.pull-left(src='/vendor/template/img/placeholders/avatars/avatar2.jpg', alt='avatar')
+            h2.widget-heading.h3.text-muted Icon Pack
+            .progress.progress-striped.progress-mini.active
+              .progress-bar.progress-bar-danger(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+          a.widget-content.text-right.clearfix(href='javascript:void(0)')
+            img.img-circle.img-thumbnail.img-thumbnail-avatar.pull-left(src='/vendor/template/img/placeholders/avatars/avatar11.jpg', alt='avatar')
+            h2.widget-heading.h3.text-muted Design
+            .progress.progress-striped.progress-mini.active
+              .progress-bar.progress-bar-warning(role='progressbar', aria-valuenow='55', aria-valuemin='0', aria-valuemax='100', style='width: 55%')
+          .widget-content.themed-background-muted.text-dark
+            .row.text-center
+              .col-xs-6
+                i.fa.fa-check-circle-o
+                |  On Time
+              .col-xs-6
+                i.fa.fa-clock-o
+                |  17 Days
+        // END Project Widget
+      .col-sm-6
+        // Image Widget
+        .widget
+          .widget-content.widget-content-mini.themed-background-dark.text-light-op
+            span.pull-right.text-muted Featured
+            i.fa.fa-fw.fa-pencil
+            strong Story
+          .widget-image
+            img(src='/vendor/template/img/placeholders/photos/photo9.jpg', alt='image')
+            .widget-image-content
+              h2.widget-heading
+                a.text-light(href='')
+                  strong The autumn trip that changed my life
+              h3.widget-heading.text-light-op.h4 It changed the way I think
+            i.gi.gi-airplane
+          .widget-content.text-dark
+            .row.text-center
+              .col-xs-4
+                i.fa.fa-heart-o
+                |  9.5k
+              .col-xs-4
+                i.fa.fa-eye
+                |  76k
+              .col-xs-4
+                i.fa.fa-share-alt
+                |  7.2k
+        // END Image Widget
+  .col-lg-4
+    .row
+      // Mini Stats Widgets
+      .col-xs-12
+        a.widget.text-center(href='javascript:void(0)')
+          .widget-content.text-center.clearfix
+            .widget-icon.themed-background-warning.pull-right
+              i.gi.gi-warning_sign.fa-fw.text-light
+            img.img-circle.img-thumbnail.img-thumbnail-avatar.pull-left(src='/vendor/template/img/placeholders/avatars/avatar9.jpg', alt='avatar')
+            h2.widget-heading.h3.text-warning
+              i.fa.fa-plus
+              strong
+                span(data-toggle='counter', data-to='26')
+            span.text-muted Requests
+      .col-xs-6
+        a.widget.text-center(href='javascript:void(0)')
+          .widget-content
+            i.fa.fa-3x.fa-cloud-download.text-success
+          .widget-content.themed-background-muted.text-dark
+            strong 35k
+            |  Downloads
+      .col-xs-6
+        a.widget.text-center(href='javascript:void(0)')
+          .widget-content
+            i.fa.fa-3x.fa-bookmark.text-danger
+          .widget-content.themed-background-muted.text-dark
+            strong 760
+            |  Bookmarks
+      .col-xs-6
+        a.widget.text-center(href='javascript:void(0)')
+          .widget-content
+            i.fa.fa-3x.fa-twitter
+          .widget-content.themed-background-muted.text-dark
+            strong 35k
+            |  Followers
+      .col-xs-6
+        a.widget.text-center(href='javascript:void(0)')
+          .widget-content
+            i.fa.fa-3x.fa-wordpress.text-dark
+          .widget-content.themed-background-muted.text-dark
+            strong 15
+            |  Themes
+      // END Mini Stats Widgets
+// END Third Row
+// END Page Content

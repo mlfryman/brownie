@@ -24,6 +24,10 @@ module.exports = function(app, express){
   app.get('/home', home.index);
   app.post('/register', users.register);
   app.post('/login', users.login);
+  app.post('/dashboard', users.dashboard);
+  app.post('/profile', users.profile);
+  //session check
+  app.get('/checkSession', users.checkSession);
 
   app.use(security.bounce);
   app.delete('/logout', users.logout);

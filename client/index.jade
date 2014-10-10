@@ -1,32 +1,74 @@
 doctype html
-html(ng-app='brownie', lang='en')
+//if IE 9
+  html.no-js.lt-ie10
+// [if gt IE 9] <!
+html.no-js(ng-app='brownie', lang='en')
+  // <![endif]
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title Brownie Points
-    link(href='/vendor/bootstrap/dist/css/bootstrap.css', rel='stylesheet')
-    link(href='/vendor/fontawesome/css/font-awesome.css', rel='stylesheet')
-    link(href='/vendor/toastr/toastr.css', rel='stylesheet')
-    link(href='/index.css', rel='stylesheet')
-  body
-    include nav
-    .container
-      .row
-        .col-xs-12
-          #container(ng-view)
+    // Icons
+    // The following icons can be replaced with your own, they are used by desktop and mobile browsers
+    link(rel='shortcut icon', href='/vendor/template/img/favicon.ico')
+    link(rel='apple-touch-icon', href='/vendor/template/img/icon57.png', sizes='57x57')
+    link(rel='apple-touch-icon', href='/vendor/template/img/icon72.png', sizes='72x72')
+    link(rel='apple-touch-icon', href='/vendor/template/img/icon76.png', sizes='76x76')
+    link(rel='apple-touch-icon', href='/vendor/template/img/icon114.png', sizes='114x114')
+    link(rel='apple-touch-icon', href='/vendor/template/img/icon120.png', sizes='120x120')
+    link(rel='apple-touch-icon', href='/vendor/template/img/icon144.png', sizes='144x144')
+    link(rel='apple-touch-icon', href='/vendor/template/img/icon152.png', sizes='152x152')
+    link(rel='apple-touch-icon', href='/vendor/template/img/icon180.png', sizes='180x180')
+    // Stylesheets
+    // Bootstrap is included in its original form, unaltered
+    link(rel='stylesheet', href='/vendor/template/css/bootstrap.min.css')
+    // Related styles of various icon packs and plugins
+    link(rel='stylesheet', href='/vendor/template/css/plugins.css')
+    link(rel='stylesheet', href='/vendor/toastr/toastr.css')
+    // The main stylesheet of this template. All Bootstrap overwrites are defined in here
+    link(rel='stylesheet', href='/vendor/template/css/main.css')
+    link(rel='stylesheet', href='/index.css')
+    // The themes stylesheet of this template (for using specific theme color in individual elements - must included last)
+    link(rel='stylesheet', href='/vendor/template/css/themes.css')
+    // Modernizr (browser feature detection library)
+    script(src='vendor/template/js/modernizr-2.8.3.min.js')
+  body(data-ng-controller='AppCtrl')
+    //include nav
+    // Page Wrapper
+    #page-wrapper.page-loading
+      // Preloader
+      // Preloader functionality (initialized in js/app.js) - pageLoading()
+      // Used only if page preloader enabled from by adding the class 'page-loading' in #page-wrapper element
+      .preloader
+        .inner
+          // Animation spinner for all modern browsers
+          .preloader-spinner.themed-background.hidden-lt-ie10
+          // Text for IE9
+          h3.text-primary.visible-lt-ie10
+            strong Loading...
+      // Page Container
+      #page-container.header-fixed-top.sidebar-visible-lg-full
+        // Alternative Sidebar
+        // Main Sidebar
+        //include ./views/partials/sidebar
+        // Main Container
+        include ./views/partials/header
 
     script(src='/vendor/jquery/dist/jquery.js')
     script(src='/vendor/angular/angular.js')
     script(src='/vendor/angular-route/angular-route.js')
-    script(src='/vendor/bootstrap/dist/js/bootstrap.js')
     script(src='/vendor/underscore/underscore.js')
     script(src='/vendor/toastr/toastr.js')
     script(src='/vendor/localforage/dist/localforage.js')
     script(src='/vendor/angular-localforage/dist/angular-localForage.js')
+    script(src='/vendor/template/js/bootstrap.min.js')
+    script(src='/vendor/template/js/plugins.js')
+    script(src='/vendor/template/js/app.js')
     script(src='/config/toastr.js')
     script(src='/index.js')
     script(src='/nav.js')
+    script(src='/appCtrl.js')
     script(src='/views/home/home.js')
     script(src='/views/register/register.js')
     script(src='/views/login/login.js')

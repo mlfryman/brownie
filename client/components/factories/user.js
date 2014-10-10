@@ -16,7 +16,11 @@
       return $http.delete('/logout');
     }
 
-    return {register:register, login:login, logout:logout};
+    function checkSession(){
+      return $http.get('/checkSession');
+    }
+
+    return {register:register, login:login, logout:logout, checkSession:checkSession};
   }]);
 })();
 

@@ -1,51 +1,44 @@
-/- incomplete page
-.page
-  .row
-    .col-sm-3
-      section.panel.panel-default.mail-categories
-        .panel-heading
-          a.btn.btn-block.btn-lg.btn-primary(href='#/message/compose') Compose
-        ul.list-group
-          li.list-group-item.active
-            a(href='')
-              i.fa.fa-inbox
-              | Inbox
-              span.badge.badge-info.pull-right <# unread>
-          li.list-group-item
-            a(href='')
-              i.fa.fa-envelope-o
-              | Sent mail
-    .col-sm-9
-          section.panel.panel-default.mail-container
-            .panel-heading
-              strong
-                span.glyphicon.glyphicon-th
-                |  View Mail
-            .panel-body
-              .mail-header.row
-                .col-md-8
-                  h3 <msg.subject>
-                .col-md-4
-                  .pull-right
-                    a.btn.btn-sm.btn-primary(data-toggle='modal', data-target='#replyMessage')
-                      | Reply
-                      i.fa.fa-mail-reply
-                    // insert delete method
-                    a.btn.btn-sm.btn-default(href='')
-                      i.fa.fa-trash-o
-              .mail-info
-                .row
-                  .col-md-8
-                    strong <{msg.sender.alias}>
-                    |  (username) to
-                    strong me
-                  .col-md-4
-                    .pull-right
-                      | <moment(msg.date).format('MM/DD/YYYY')>
-              .mail-content
-                  | <msg.message>
-              .mail-actions
-                a.btn.btn-sm.btn-primary(data-toggle='modal', data-target='#replyMessage')
-                  | Reply
-                  i.fa.fa-mail-reply
 
+// Message View
+#message-view.block-section.display-none
+  // Title
+  .block-title.clearfix
+    .block-options.pull-right
+      a.btn.btn-effect-ripple.btn-warning(href='javascript:void(0)', data-toggle='tooltip', title='Star')
+        i.fa.fa-star
+      a.btn.btn-effect-ripple.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+        i.fa.fa-times
+    .block-options.pull-left
+      a#message-view-back.btn.btn-effect-ripple.btn-default(href='javascript:void(0)')
+        i.fa.fa-chevron-left
+        |  Back to Inbox
+  // END Title
+  // Header
+  h3
+    strong Project updates
+    small
+      em 1 week ago
+  p
+    a(href='javascript:void(0)')
+      strong John Doe
+    strong &lt;john.doe@example.com&gt;
+    |  to
+    a(href='javascript:void(0)')
+      strong Admin
+    strong &lt;admin@example.com&gt;
+  // END Header
+  // Message Body
+  hr
+  p Hi,
+  p
+    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus scelerisque vulputate. Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique et lectus? Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque? Proin rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis eget! Nulla quis ligula ipsum. Donec vitae ultrices dolor?
+  p
+    | Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  p
+    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus scelerisque vulputate. Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique et lectus? Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque? Proin rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis eget! Nulla quis ligula ipsum. Donec vitae ultrices dolor?
+  p Best Regards,
+  p John
+  hr
+  // END Message Body
+  include reply
+// END Message View

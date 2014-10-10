@@ -1,59 +1,104 @@
-/- incomplete page
-.page
-  .row
-    .col-sm-3
-      section.panel.panel-default.mail-categories
-        .panel-heading
-          a.btn.btn-block.btn-lg.btn-primary(href='#/message/compose') Compose
-        ul.list-group
-          li.list-group-item.active
-            a(href='javascript:;')
-              i.fa.fa-inbox
-              | Inbox
-              span.badge.badge-info.pull-right <unread>
-          li.list-group-item
-            a(href='javascript:;')
-              i.fa.fa-envelope-o
-              | Sent mail
-    .col-sm-9
-      section.panel.panel-default.mail-container
-        .panel-heading
-          strong
-            span.glyphicon.glyphicon-th
-            |  Inbox
-        .mail-options
-          label.ui-checkbox
-            input(name='checkbox1', type='checkbox', value='option1')
-            span Toggle All
-        table.table.table-hover
-          tr.mail-unread
-            td
-              label.ui-checkbox
-                input(name='checkbox1', type='checkbox', value='option1')
-                span
-            td <sender.name>
-            td <message.subject>
-            td <message.date.fromNow()>
-          tr
-            td
-              label.ui-checkbox
-                input(name='checkbox1', type='checkbox', value='option1')
-                span
-            td <sender.name>
-            td <message.subject>
-            td <message.date.fromNow()>
 
-        //table.table.table-hover
-        //  thead
-        //    tr
-        //      th From
-        //      th: a(href="/messages?sort=#{(sort === 1) ? 1 : sort * -1 }") Date
-        //      th Time
-        //      th Subject
-        //  tbody
-        //    each msg in msgs
-        //      tr(style='font-weight: #{ (message.isRead) ? "normal" : "bold"};')
-        //        td: a(href='/users/#{msg.sender.alias}')= msg.sender.alias
-        //        td= moment(msg.date).format('MM/DD/YYYY')
-        //        td= moment(msg.date).fromNow()
-        //        td: a(href='/messages/#{msg._id}')= msg.subject
+// Page content
+#page-content.inner-sidebar-left
+  // Inner Sidebar
+  #page-content-sidebar
+    // Compose Message (Modal markup is at the bottom of this page before including JS scripts)
+    .block-section
+      a.btn.btn-effect-ripple.btn-block.btn-success(href='#modal-compose', data-toggle='modal')
+        i.fa.fa-pencil
+        |  Compose Message
+    // Collapsible Navigation
+    a.btn.btn-block.btn-effect-ripple.btn-default.visible-xs(href='javascript:void(0)', data-toggle='collapse', data-target='#email-nav') Navigation
+    #email-nav.collapse.navbar-collapse.remove-padding
+      // Menu
+      .block-section
+        ul.nav.nav-pills.nav-stacked
+          li.active
+            a(href='#')
+              i.fa.fa-fw.fa-inbox.icon-push
+              strong Inbox
+          li
+            a(href='javascript:void(0)')
+              i.fa.fa-fw.fa-send.icon-push
+              strong Sent
+      // END Menu
+    // END Collapsible Navigation
+  // END Inner Sidebar
+  // Email Center Content
+  .block.overflow-hidden
+    // Message List
+    #message-list
+      // Title
+      .block-title.clearfix
+        .block-options.pull-right
+          a.btn.btn-effect-ripple.btn-default(href='javascript:void(0)')
+            i.fa.fa-arrow-left
+            |  Prev
+          a.btn.btn-effect-ripple.btn-default(href='javascript:void(0)')
+            | Next
+            i.fa.fa-arrow-right
+        .block-options.pull-left
+          a.btn.btn-effect-ripple.btn-info(href='javascript:void(0)', data-toggle='tooltip', title='Archive Selected')
+            i.fa.fa-briefcase
+          a.btn.btn-effect-ripple.btn-warning(href='javascript:void(0)', data-toggle='tooltip', title='Star Selected')
+            i.fa.fa-star
+          a.btn.btn-effect-ripple.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete Selected')
+            i.fa.fa-times
+      // END Title
+      // Messages
+      .block-content-full
+        table.table.table-borderless.table-striped.table-vcenter.remove-margin
+          tbody
+            // Use the first row as a prototype for your column widths
+            tr
+              td.td-label.td-label-muted.text-center(style='width: 5%;')
+                label.csscheckbox.csscheckbox-primary
+                  input(type='checkbox')
+                  span
+              td.text-center(style='width: 7%;')
+                img.img-circle(src='/vendor/template/img/placeholders/avatars/avatar10.jpg', alt='avatar')
+              td
+                h4
+                  a.text-dark(href='javascript:void(0)')
+                    strong Product updates
+                span.text-muted This is the preview text of this message..
+              td.hidden-xs.text-center(style='width: 30px;')
+                i.fa.fa-paperclip.fa-2x.text-muted
+              td.hidden-xs.text-right.text-muted(style='width: 120px;')
+                em just now
+            tr
+              td.td-label.td-label-danger.text-center
+                label.csscheckbox.csscheckbox-primary
+                  input(type='checkbox')
+                  span
+              td.text-center
+                img.img-circle(src='/vendor/template/img/placeholders/avatars/avatar12.jpg', alt='avatar')
+              td
+                h4
+                  a.text-dark(href='javascript:void(0)')
+                    strong New friend request
+                span.text-muted This is the preview text of this message..
+              td.hidden-xs
+                i.fa.fa-paperclip.fa-2x.text-muted
+              td.hidden-xs.text-right.text-muted
+                em 15 min ago
+            tr
+              td.td-label.td-label-success.text-center
+                label.csscheckbox.csscheckbox-primary
+                  input(type='checkbox')
+                  span
+              td.text-center
+                img.img-circle(src='/vendor/template/img/placeholders/avatars/avatar12.jpg', alt='avatar')
+              td
+                h4
+                  a.text-dark(href='javascript:void(0)')
+                    strong New project details
+                span.text-muted This is the preview text of this message..
+              td.hidden-xs
+              td.hidden-xs.text-right.text-muted
+                em 40 min ago
+      // END Messages
+    // END Message List
+    include single
+include compose

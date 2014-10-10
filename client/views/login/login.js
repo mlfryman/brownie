@@ -1,23 +1,24 @@
 (function(){
   'use strict';
 
-  angular.module('mean-template')
-  .controller('LoginCtrl', ['$scope', '$location', 'User', function($scope, $location, User){
+  angular.module('brownie')
+  .controller('LoginCtrl', ['$scope', '$location', '$rootScope', 'User' , 'AUTH_EVENTS', function($scope, $location, $rootScope, User, AUTH_EVENTS){
     $scope.user = {};
 
-    function success(response){
-      toastr.success('Successful login.');
+    function successLogin(response){
+      toastr.success('Welcome.');
+      $scope.setCurrentUser(response.data.user);
       $location.path('/');
     }
 
-    function failure(response){
-      toastr.error('Error during login, try again.');
+    function failureLogin(response){
+      toastr.error('Username or password incorrect, please try again.');
       $scope.user = {};
     }
 
     $scope.login = function(){
-      User.login($scope.user).then(success, failure);
+      User.login($scope.user).then(successLogin, failureLogin);
     };
+
   }]);
 })();
-
