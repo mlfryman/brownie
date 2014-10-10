@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('brownie')
-  .factory('Home', ['$http', function($http){
+  .factory('Dashboard', ['$http', function($http){
 
   }]);
 })();

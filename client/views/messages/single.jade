@@ -1,0 +1,51 @@
+/- incomplete page
+.page
+  .row
+    .col-sm-3
+      section.panel.panel-default.mail-categories
+        .panel-heading
+          a.btn.btn-block.btn-lg.btn-primary(href='#/message/compose') Compose
+        ul.list-group
+          li.list-group-item.active
+            a(href='')
+              i.fa.fa-inbox
+              | Inbox
+              span.badge.badge-info.pull-right <# unread>
+          li.list-group-item
+            a(href='')
+              i.fa.fa-envelope-o
+              | Sent mail
+    .col-sm-9
+          section.panel.panel-default.mail-container
+            .panel-heading
+              strong
+                span.glyphicon.glyphicon-th
+                |  View Mail
+            .panel-body
+              .mail-header.row
+                .col-md-8
+                  h3 <msg.subject>
+                .col-md-4
+                  .pull-right
+                    a.btn.btn-sm.btn-primary(data-toggle='modal', data-target='#replyMessage')
+                      | Reply
+                      i.fa.fa-mail-reply
+                    // insert delete method
+                    a.btn.btn-sm.btn-default(href='')
+                      i.fa.fa-trash-o
+              .mail-info
+                .row
+                  .col-md-8
+                    strong <{msg.sender.alias}>
+                    |  (username) to
+                    strong me
+                  .col-md-4
+                    .pull-right
+                      | <moment(msg.date).format('MM/DD/YYYY')>
+              .mail-content
+                  | <msg.message>
+              .mail-actions
+                a.btn.btn-sm.btn-primary(data-toggle='modal', data-target='#replyMessage')
+                  | Reply
+                  i.fa.fa-mail-reply
+

@@ -1,0 +1,59 @@
+/- incomplete page
+.page
+  .row
+    .col-sm-3
+      section.panel.panel-default.mail-categories
+        .panel-heading
+          a.btn.btn-block.btn-lg.btn-primary(href='#/message/compose') Compose
+        ul.list-group
+          li.list-group-item.active
+            a(href='javascript:;')
+              i.fa.fa-inbox
+              | Inbox
+              span.badge.badge-info.pull-right <unread>
+          li.list-group-item
+            a(href='javascript:;')
+              i.fa.fa-envelope-o
+              | Sent mail
+    .col-sm-9
+      section.panel.panel-default.mail-container
+        .panel-heading
+          strong
+            span.glyphicon.glyphicon-th
+            |  Inbox
+        .mail-options
+          label.ui-checkbox
+            input(name='checkbox1', type='checkbox', value='option1')
+            span Toggle All
+        table.table.table-hover
+          tr.mail-unread
+            td
+              label.ui-checkbox
+                input(name='checkbox1', type='checkbox', value='option1')
+                span
+            td <sender.name>
+            td <message.subject>
+            td <message.date.fromNow()>
+          tr
+            td
+              label.ui-checkbox
+                input(name='checkbox1', type='checkbox', value='option1')
+                span
+            td <sender.name>
+            td <message.subject>
+            td <message.date.fromNow()>
+
+        //table.table.table-hover
+        //  thead
+        //    tr
+        //      th From
+        //      th: a(href="/messages?sort=#{(sort === 1) ? 1 : sort * -1 }") Date
+        //      th Time
+        //      th Subject
+        //  tbody
+        //    each msg in msgs
+        //      tr(style='font-weight: #{ (message.isRead) ? "normal" : "bold"};')
+        //        td: a(href='/users/#{msg.sender.alias}')= msg.sender.alias
+        //        td= moment(msg.date).format('MM/DD/YYYY')
+        //        td= moment(msg.date).fromNow()
+        //        td: a(href='/messages/#{msg._id}')= msg.subject
