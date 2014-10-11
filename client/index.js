@@ -8,7 +8,7 @@
     .when('/register', {templateUrl:'/views/register/register.html', controller:'RegisterCtrl'})
     .when('/login',    {templateUrl:'/views/login/login.html',       controller:'LoginCtrl'})
     .when('/logout',   {templateUrl:'/views/logout/logout.html',     controller:'LogoutCtrl'})
-    .when('/dashboard',   {templateUrl:'/views/dashboard/dashboard.html'})
+    .when('/dashboard',   {templateUrl:'/views/dashboard/dashboard.html', controller:'DashboardCtrl'})
     .when('/profile',   {templateUrl:'/views/profile/profile.html'})
     .when('/search',   {templateUrl:'/views/search/search.html'})
     .when('/logout',   {templateUrl:'/views/logout/logout.html',     controller:'LogoutCtrl'})

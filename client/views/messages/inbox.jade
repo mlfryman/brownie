@@ -9,17 +9,17 @@
         i.fa.fa-pencil
         |  Compose Message
     // Collapsible Navigation
-    a.btn.btn-block.btn-effect-ripple.btn-default.visible-xs(href='javascript:void(0)', data-toggle='collapse', data-target='#email-nav') Navigation
+    a.btn.btn-block.btn-effect-ripple.btn-default.visible-xs(href='', data-toggle='collapse', data-target='#email-nav') Navigation
     #email-nav.collapse.navbar-collapse.remove-padding
       // Menu
       .block-section
         ul.nav.nav-pills.nav-stacked
           li.active
-            a(href='#')
+            a(href='/#/inbox')
               i.fa.fa-fw.fa-inbox.icon-push
               strong Inbox
           li
-            a(href='javascript:void(0)')
+            a(href='')
               i.fa.fa-fw.fa-send.icon-push
               strong Sent
       // END Menu
@@ -32,18 +32,18 @@
       // Title
       .block-title.clearfix
         .block-options.pull-right
-          a.btn.btn-effect-ripple.btn-default(href='javascript:void(0)')
+          a.btn.btn-effect-ripple.btn-default(href='')
             i.fa.fa-arrow-left
             |  Prev
-          a.btn.btn-effect-ripple.btn-default(href='javascript:void(0)')
+          a.btn.btn-effect-ripple.btn-default(href='')
             | Next
             i.fa.fa-arrow-right
         .block-options.pull-left
-          a.btn.btn-effect-ripple.btn-info(href='javascript:void(0)', data-toggle='tooltip', title='Archive Selected')
+          a.btn.btn-effect-ripple.btn-info(href='', data-toggle='tooltip', title='Archive Selected')
             i.fa.fa-briefcase
-          a.btn.btn-effect-ripple.btn-warning(href='javascript:void(0)', data-toggle='tooltip', title='Star Selected')
+          a.btn.btn-effect-ripple.btn-warning(href='', data-toggle='tooltip', title='Star Selected')
             i.fa.fa-star
-          a.btn.btn-effect-ripple.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete Selected')
+          a.btn.btn-effect-ripple.btn-danger(href='', data-toggle='tooltip', title='Delete Selected')
             i.fa.fa-times
       // END Title
       // Messages
@@ -51,53 +51,23 @@
         table.table.table-borderless.table-striped.table-vcenter.remove-margin
           tbody
             // Use the first row as a prototype for your column widths
-            tr
+            tr(data-ng-repeat='msg in messages')
               td.td-label.td-label-muted.text-center(style='width: 5%;')
                 label.csscheckbox.csscheckbox-primary
-                  input(type='checkbox')
+                  input(type='checkbox', name='read', data-ng-model='msg.isRead')
                   span
               td.text-center(style='width: 7%;')
-                img.img-circle(src='/vendor/template/img/placeholders/avatars/avatar10.jpg', alt='avatar')
+                a(href='/#/users/{{msg.sender.alias}}')
+                img.img-circle(data-ng-src='/vendor/template/img/placeholders/avatars/avatar10.jpg', alt='avatar')
               td
                 h4
-                  a.text-dark(href='javascript:void(0)')
-                    strong Product updates
-                span.text-muted This is the preview text of this message..
+                  a.text-dark(href='/#/messages/{{msg._id}}')
+                    strong {{msg.subject}}
+                span.text-muted {{prop.msg.slice(0, 20) + '.....'}}
               td.hidden-xs.text-center(style='width: 30px;')
                 i.fa.fa-paperclip.fa-2x.text-muted
               td.hidden-xs.text-right.text-muted(style='width: 120px;')
-                em just now
-            tr
-              td.td-label.td-label-danger.text-center
-                label.csscheckbox.csscheckbox-primary
-                  input(type='checkbox')
-                  span
-              td.text-center
-                img.img-circle(src='/vendor/template/img/placeholders/avatars/avatar12.jpg', alt='avatar')
-              td
-                h4
-                  a.text-dark(href='javascript:void(0)')
-                    strong New friend request
-                span.text-muted This is the preview text of this message..
-              td.hidden-xs
-                i.fa.fa-paperclip.fa-2x.text-muted
-              td.hidden-xs.text-right.text-muted
-                em 15 min ago
-            tr
-              td.td-label.td-label-success.text-center
-                label.csscheckbox.csscheckbox-primary
-                  input(type='checkbox')
-                  span
-              td.text-center
-                img.img-circle(src='/vendor/template/img/placeholders/avatars/avatar12.jpg', alt='avatar')
-              td
-                h4
-                  a.text-dark(href='javascript:void(0)')
-                    strong New project details
-                span.text-muted This is the preview text of this message..
-              td.hidden-xs
-              td.hidden-xs.text-right.text-muted
-                em 40 min ago
+                em {{moment(msg.date).format('MM/DD/YYYY')}} {{moment(msg.date).fromNow()}}
       // END Messages
     // END Message List
     include single

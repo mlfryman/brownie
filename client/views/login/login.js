@@ -6,7 +6,7 @@
     $scope.user = {};
 
     function successLogin(response){
-      toastr.success('Welcome.');
+      toastr.success('Welcome!');
       $scope.setCurrentUser(response.data.user);
       $location.path('/');
     }

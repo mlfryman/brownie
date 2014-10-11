@@ -2,11 +2,11 @@
   'use strict';
 
   angular.module('brownie')
-  .controller('DashboardCtrl', ['$scope', 'User', 'Dashboard','$window', function($scope, User, Dashboard, $window){
+  .controller('DashboardCtrl', ['$scope', 'Dashboard', function($scope, Dashboard){
 
-    User.index(User).then(function(response){
+    /*User.index(User).then(function(response){
       $scope.user = response.data.user;
-    });
+    });*/
   }]);
 })();
 
