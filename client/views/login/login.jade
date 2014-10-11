@@ -9,11 +9,11 @@
         .input-group(style='margin-bottom: 25px')
           span.input-group-addon
             i.glyphicon.glyphicon-user
-          input#email.form-control(type='email', name='email', ng-model='user.email', placeholder='email')
+          input#email.form-control(type='email', name='email', data-ng-model='user.email', placeholder='email')
         .input-group(style='margin-bottom: 25px')
           span.input-group-addon
             i.glyphicon.glyphicon-lock
-          input#password.form-control(type='password', name='password', ng-model='user.password', placeholder='password')
+          input#password.form-control(type='password', name='password', data-ng-model='user.password', placeholder='password')
         .form-group(style='margin-top:10px')
           .col-sm-12.controls
             button.btn.btn-success(ng-show='loginForm.$valid', ng-click='login()') Login
