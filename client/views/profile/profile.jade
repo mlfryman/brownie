@@ -7,7 +7,9 @@
         .widget-image-content.text-center
           a.gravLink(href='https://en.gravatar.com/'): img.gravatar.img-circle.img-thumbnail.img-thumbnail-transparent.img-thumbnail-avatar-2x.push(alt='Create your own Gravatar!' gravatar-src-once='currentUser.email' gravatar-size="200")
           h2.widget-heading.text-light
-            strong {{currentUser.username}}
+            strong {{currentUser.name}}
+          h4.widget-heading.text-light-op
+            em {{currentUser.username}}
       .widget-content.widget-content-border
         .row.text-center
           .col-xs-6
@@ -15,7 +17,7 @@
               i.gi.gi-star.text-success.push
               br
               small
-                strong <# of>
+                strong {{currentUser.totalPoints}}
                 |  Brownie Points
           .col-xs-6
             h3.widget-heading
