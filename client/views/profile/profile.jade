@@ -5,11 +5,9 @@
       .widget-image.widget-image-sm
         img(src='/vendor/template/img/placeholders/photos/photo1@2x.jpg', alt='image')
         .widget-image-content.text-center
-          img.img-circle.img-thumbnail.img-thumbnail-transparent.img-thumbnail-avatar-2x.push(src='/vendor/template/img/placeholders/avatars/avatar13@2x.jpg', alt='avatar')
+          a.gravLink(href='https://en.gravatar.com/'): img.gravatar.img-circle.img-thumbnail.img-thumbnail-transparent.img-thumbnail-avatar-2x.push(alt='Create your own Gravatar!' gravatar-src-once='currentUser.email' gravatar-size="200")
           h2.widget-heading.text-light
-            strong <insert username>
-          h4.widget-heading.text-light-op
-            em <insert text>
+            strong {{currentUser.username}}
       .widget-content.widget-content-border
         .row.text-center
           .col-xs-6

@@ -1,0 +1,220 @@
+// Search Results Header
+.content-header
+  .row
+    .col-sm-6.col-sm-offset-3
+      .header-section
+        form(action='page_ready_search_results.html', method='post', onsubmit='return false;')
+          .form-group
+            input#search-term.form-control(type='text', name='search-term', placeholder='Search for something..')
+          .form-group
+            select#search-categories.select-chosen(name='search-categories', data-placeholder='Choose categories..', style='width: 250px;', multiple='')
+              option(value='images', selected='') Images
+              option(value='users') Users
+              option(value='sites') Sites
+              option(value='files') Files
+              option(value='projects') Projects
+          .text-center
+            button.btn.btn-effect-ripple.btn-effect-ripple.btn-primary(data-ng-click='searchUsers()') Search Database
+// END Search Results Header
+// Search Results Block
+.block
+  // Search Styles Title
+  .block-title
+    ul.nav.nav-tabs(data-toggle='tabs')
+      li.active
+        a(href='#search-tab-users') Users
+  // END Search Styles Title
+  // Search Results Content
+  .tab-content
+    // Users Results
+    #search-tab-users.tab-pane
+      .row
+        .col-sm-6
+          table.table.table-striped.table-borderless.table-hover.table-vcenter
+            tbody
+              tr.animation-fadeInQuickInv
+                td.text-center(style='width: 100px;')
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar12.jpg', alt='avatar')
+                td.hidden-xs user1@example.com
+                td.text-center(style='width: 100px;')
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar9.jpg', alt='avatar')
+                td.hidden-xs user2@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar7.jpg', alt='avatar')
+                td.hidden-xs user3@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar8.jpg', alt='avatar')
+                td.hidden-xs user4@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar10.jpg', alt='avatar')
+                td.hidden-xs user5@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar11.jpg', alt='avatar')
+                td.hidden-xs user6@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar12.jpg', alt='avatar')
+                td.hidden-xs user7@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar3.jpg', alt='avatar')
+                td.hidden-xs user8@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar15.jpg', alt='avatar')
+                td.hidden-xs user9@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar4.jpg', alt='avatar')
+                td.hidden-xs user10@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+        .col-sm-6
+          table.table.table-striped.table-borderless.table-hover.table-vcenter
+            tbody
+              tr.animation-fadeInQuickInv
+                td.text-center(style='width: 100px;')
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar13.jpg', alt='avatar')
+                td.hidden-xs user11@example.com
+                td.text-center(style='width: 100px;')
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar4.jpg', alt='avatar')
+                td.hidden-xs user12@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar5.jpg', alt='avatar')
+                td.hidden-xs user13@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar8.jpg', alt='avatar')
+                td.hidden-xs user14@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar3.jpg', alt='avatar')
+                td.hidden-xs user15@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar12.jpg', alt='avatar')
+                td.hidden-xs user16@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar16.jpg', alt='avatar')
+                td.hidden-xs user17@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar5.jpg', alt='avatar')
+                td.hidden-xs user18@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar12.jpg', alt='avatar')
+                td.hidden-xs user19@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+              tr.animation-fadeInQuickInv
+                td.text-center
+                  img.img-circle.img-thumbnail.img-thumbnail-avatar(src='img/placeholders/avatars/avatar5.jpg', alt='avatar')
+                td.hidden-xs user20@example.com
+                td.text-center
+                  a.btn.btn-effect-ripple.btn-xs.btn-success(href='javascript:void(0)', data-toggle='tooltip', title='Edit')
+                    i.fa.fa-pencil
+                  a.btn.btn-effect-ripple.btn-xs.btn-danger(href='javascript:void(0)', data-toggle='tooltip', title='Delete')
+                    i.fa.fa-times
+    // END Users Results
+  // END Search Results Content
+// END Search Results Block

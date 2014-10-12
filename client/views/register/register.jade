@@ -3,7 +3,7 @@
   // Register Header
   h1.h2.text-light.text-center.push-top-bottom.animation-slideDown
     i.fa.fa-plus
-    strong Create Account
+    strong &nbsp; Create Account
   // END Register Header
   // Register Form
   .block.animation-fadeInQuickInv
@@ -18,16 +18,13 @@
     form#form-register.form-horizontal(novalidate, role='form', name='userForm')
       .form-group
         .col-xs-12
-          input#register-username.form-control(type='text', name='alias', data-ng-model='user.alias', placeholder='Username', required, autofocus)
+          input#register-username.form-control(type='text', name='username', data-ng-model='user.username', placeholder='Username', required, autofocus)
       .form-group
         .col-xs-12
           input#register-email.form-control(type='email', name='email', data-ng-model='user.email', placeholder='Email', required)
       .form-group
         .col-xs-12
           input#register-password.form-control(type='password', name='password', data-ng-model='user.password', placeholder='Password', data-ng-minlength='6', required)
-      .form-group
-        .col-xs-12
-          input#register-password-verify.form-control(type='password', name='confirm', data-ng-change='checkPassword()', data-ng-model='user.passwordConfirm', placeholder='Confirm Password', required)
       .form-group.form-actions
         .col-xs-6
           label.csscheckbox.csscheckbox-primary(data-toggle='tooltip', title='Agree to the terms')
@@ -44,7 +41,7 @@
   footer.text-muted.text-center.animation-pullUp
     small
       span#year-copy
-      |  &copy;
+      |  &copy; 2014
       | Melanie L. Fryman
   // END Footer
 // END Login Container

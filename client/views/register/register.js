@@ -4,30 +4,29 @@
   angular.module('brownie')
   .controller('RegisterCtrl', ['$scope', '$location', 'User', function($scope, $location, User){
     $scope.user = {};
-    $scope.matched = false;
+    $scope.formIsValid = false;
+
+    $scope.$watch('userForm.$valid', function(){
+      $scope.formIsValid = !$scope.formIsValid;
+    });
 
     function success(response){
-      toastr.success('Welcome.');
-      $location.path('/login');
+      toastr.success('Successfully registered!');
+      $location.path('/profile');
     }
 
     function failure(response){
-      toastr.error('Sorry, either that e-mail was already registered or an error occured. Try again.');
+      toastr.error('That email is already taken, or the password is too short. Please try again.');
       $scope.user = {};
     }
 
     $scope.register = function(){
-      if($scope.matched === false){
-        toastr.error('Your passwords do not match, please try again.');
+      if(!$scope.formIsValid){
+        toastr.error('All fields are required');
       }else{
         User.register($scope.user).then(success, failure);
       }
     };
-
-    $scope.checkPassword = function(){
-      $scope.matched = $scope.user.password === $scope.user.passwordConfirm;
-    };
-
   }]);
 })();
 

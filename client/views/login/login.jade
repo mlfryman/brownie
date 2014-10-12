@@ -1,26 +1,43 @@
-#loginbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2(style='margin-top:50px;')
-  .panel.panel-primary
-    .panel-heading
-      .panel-title Sign In
-      div(style='float:right; font-size: 80%; position: relative; top:-10px')
-        a(href='#') Forgot password?
-    .panel-body(style='padding-top:30px')
-      form.form-horizontal(novalidate, role='form', name='loginForm')
-        .input-group(style='margin-bottom: 25px')
-          span.input-group-addon
-            i.glyphicon.glyphicon-user
-          input#email.form-control(type='email', name='email', data-ng-model='user.email', placeholder='email')
-        .input-group(style='margin-bottom: 25px')
-          span.input-group-addon
-            i.glyphicon.glyphicon-lock
-          input#password.form-control(type='password', name='password', data-ng-model='user.password', placeholder='password')
-        .form-group(style='margin-top:10px')
-          .col-sm-12.controls
-            button.btn.btn-success(ng-show='loginForm.$valid', ng-click='login()') Login
-        .form-group
-          .col-md-12.control
-            div(style='border-top: 1px solid#888; padding-top:15px; font-size:85%')
-              | Don't have an account? &nbsp;
-              a(href='/#/register')
-                | Sign Up Here
+// Login Container
+#login-container
+  // Login Header
+  h1.h2.text-light.text-center.push-top-bottom.animation-slideDown
+    i.fa.fa-cube
+    strong Welcome to Brownie Points
+  // END Login Header
+  // Login Block
+  .block.animation-fadeInQuickInv
+    // Login Title
+    .block-title
+      .block-options.pull-right
+        a.btn.btn-effect-ripple.btn-primary(href='#', data-toggle='tooltip', data-placement='left', title='Forgot your password?')
+          i.fa.fa-exclamation-circle
+        a.btn.btn-effect-ripple.btn-primary(href='/#/register', data-toggle='tooltip', data-placement='left', title='Create new account')
+          i.fa.fa-plus
+      h2 Please Login
+    // END Login Title
+    // Login Form
+    form#form-login.form-horizontal(novalidate, role='form', name='loginForm')
+      .form-group
+        .col-xs-12
+          input#login-email.form-control(type='email', name='email', data-ng-model='user.email', placeholder='Email', required, autofocus)
+      .form-group
+        .col-xs-12
+          input#login-password.form-control(type='password', name='password', data-ng-model='user.password', placeholder='Password', data-ng-minlength='6', required)
+      .form-group.form-actions
+        .col-xs-8
+        .col-xs-4.text-right
+          button.btn.btn-effect-ripple.btn-sm.btn-primary(data-ng-show='loginForm.$valid', data-ng-click='login()')
+            i.fa.fa-check
+            |  Let&apos;s Go
+    // END Login Form
+  // END Login Block
+  // Footer
+  footer.text-muted.text-center.animation-pullUp
+    small
+      span#year-copy
+      |  &copy; 2014
+      | Melanie L. Fryman
+  // END Footer
+// END Login Container
 
