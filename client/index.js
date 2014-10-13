@@ -17,15 +17,9 @@
     .when('/login',    {templateUrl:'/views/login/login.html',         controller:'LoginCtrl'})
     .when('/logout',   {templateUrl:'/views/logout/logout.html',       controller:'LogoutCtrl'})
     .when('/profile',  {templateUrl:'/views/profile/profile.html',     controller:'ProfileCtrl'})
-    .when('/users',   {templateUrl:'/views/profile/connections.html',  controller:'ProfileCtrl'})
-    //.when('/user', users.connect);
-
-    //('/prizes', prizes.create);
-    //('/prizes', prizes.index);
-    //('/prizes/:prizeId', prizes.remove);
-    //('/prizes/:prizeId', prizes.update);
-
-    .otherwise({redirectTo:'/'});
+    .when('/users',    {templateUrl:'/views/profile/connections.html', controller:'ProfileCtrl'})
+    .when('/404',      {templateUrl:'/views/errors/404.html',          controller:'ErrorsCtrl'})
+    .otherwise({redirectTo:'/404'});
 
     $httpProvider.interceptors.push('HttpInterceptor');
     $localForageProvider.config({name:'brownie', storeName:'cache', version:1.0});

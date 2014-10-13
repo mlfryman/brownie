@@ -17,21 +17,23 @@
               br
               i.fa.fa-fw.fa-star.text-success
               |  {{user.points}} Brownie Points
-            td.text-right(style='width: 20%;')
-              .btn-group
-                a.btn.btn-effect-ripple.btn-primary(data-ng-click='buyPrize(currentUser)', data-toggle='tooltip', title='Surprise')
-                  i.gi.gi-gift
-                a.btn.btn-effect-ripple.btn-primary(data-ng-click='buyDrinks(currentUser)', data-toggle='tooltip', title='Drinks')
-                  i.gi.gi-celebration
-                a.btn.btn-effect-ripple.btn-primary(data-ng-click='buyConcert(currentUser)', data-toggle='tooltip', title='Concert')
-                  i.gi.gi-music
-                a.btn.btn-effect-ripple.btn-primary(data-ng-click='buyDinner(currentUser)', data-toggle='tooltip', title='Dinner')
-                  i.gi.gi-cutlery
-                a.btn.btn-effect-ripple.btn-primary(data-ng-click='buyCode(currentUser)', data-toggle='tooltip', title='Capstone Project')
-                  i.gi.gi-code
-              a.btn.btn-effect-ripple.btn-danger(data-ng-click='subPoints(user)', data-toggle='tooltip', title='- Points')
+            td.text-left(style='width: 40%;')
+              a.btn.btn-effect-ripple.btn-danger(data-ng-click='buyPrize(currentUser)', data-toggle='tooltip', title='Surprise')
+                i.gi.gi-gift
+              a.btn.btn-effect-ripple.btn-primary(data-ng-click='buyDrinks(currentUser)', data-toggle='tooltip', title='Drinks')
+                i.gi.gi-celebration
+              a.btn.btn-effect-ripple.btn-warning(data-ng-click='buyDinner(currentUser)', data-toggle='tooltip', title='Dinner')
+                i.gi.gi-cutlery
+              a.btn.btn-effect-ripple.btn-success(data-ng-click='buyPreds(currentUser)', data-toggle='tooltip', title='NSH Predators')
+                i.gi.gi-hockey
+              a.btn.btn-effect-ripple.btn-primary(data-ng-click='buyCode(currentUser)', data-toggle='tooltip', title='Capstone Project')
+                i.fa.fa-terminal
+              a.btn.btn-effect-ripple.btn-danger(data-ng-click='buyLuv(currentUser)', data-toggle='tooltip', title='<3')
+                i.gi.gi-heart
+            td.text-center(style='width: 20%;')
+              h6
+                strong Points
+              a.btn.btn-effect-ripple.btn-danger(data-ng-click='subPoints(user)', data-toggle='tooltip', title='No points for you')
                 i.gi.gi-minus
-                  | Points
-              a.btn.btn-effect-ripple.btn-success(data-ng-click='addPoints(user)', data-toggle='tooltip', title='+ Points')
+              a.btn.btn-effect-ripple.btn-success(data-ng-click='addPoints(user)', data-toggle='tooltip', title='So many points')
                 i.gi.gi-plus
-                  | Points

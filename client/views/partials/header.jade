@@ -3,32 +3,29 @@
   // Header
   header.navbar.navbar-inverse.navbar-fixed-top(role='navigation', data-ng-controller='NavCtrl')
     // Left Header Navigation
-    ul.nav.navbar-nav-custom
+    ul.nav.navbar-nav-custom.pull-left
       // Header Link
-      li.hidden-xs.animation-fadeInQuick
-        a(href='/#/') Home
+      li
+        a(href='/#/')
+          i.gi.gi-home.pull-left &nbsp;
+          | Home
       // END Header Link
     // END Left Header Navigation
     // Right Header Navigation
     ul.nav.navbar-nav-custom.pull-right(data-ng-hide='currentUser.email')
       li
         a(href='/#/register')
-          i.gi.gi.user_add.fa-fw.pull-left &nbsp;
+          i.gi.gi.user_add.pull-left &nbsp;
           | Register
-      li: a(href='/#/login') Login
+      li
+        a(href='/#/login')
+          i.gi.gi.keys.pull-left &nbsp;
+          | Login
     ul.nav.navbar-nav-custom.pull-right(data-ng-show='currentUser.email')
-      // Search Form
-      // li
-      //   //form.navbar-form-custom(action='/#/users/search', method='post', role='search')
-      //   form.navbar-form-custom(novalidate, role='search', name='searchUsers', data-ng-submit='submit')
-      //     input#top-search.form-control(type='text', name='top-search', placeholder='Search users...')
-      // // END Search Form
-      // User Dropdown
       li.dropdown
         a.dropdown-toggle(href='javascript:void(0)', data-toggle='dropdown')
           img(gravatar-src-once='currentUser.email', alt='currentUser.username')
         ul.dropdown-menu.dropdown-menu-right
-          li
           li
             a(href='/#/profile')
               i.fa.fa-user.fa-fw.pull-right
