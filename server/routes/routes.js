@@ -8,9 +8,7 @@ var morgan         = require('morgan'),
     debug          = require('../lib/debug'),
     security       = require('../lib/security'),
     home           = require('../controllers/home'),
-    prizes         = require('../controllers/prizes'),
-    dashboards     = require('../controllers/dashboards'),
-    //messages       = require('../controllers/messages'),
+    //prizes         = require('../controllers/prizes'),
     users          = require('../controllers/users');
 
 module.exports = function(app, express){
@@ -32,21 +30,17 @@ module.exports = function(app, express){
 
   app.use(security.bounce);
   app.delete('/logout', users.logout);
-  app.post('/users', users.index);
-  app.put('/user', users.connect);
-  app.put('/user', users.updateProfile);
-  app.get('/profile', users.showProfile);
-  app.get('/dashboard', dashboards.show);
+  app.get('/users', users.index);
+  app.put('/users/add/:userId', users.addPoints);
+  app.put('/users/sub/:userId', users.subPoints);
+  //app.put('/user', users.connect);
+  //app.put('/user', users.updateProfile);
+  //app.get('/profile', users.showProfile);
 
-  app.post('/prizes', prizes.create);
-  app.get('/prizes', prizes.index);
-  app.delete('/prizes/:prizeId', prizes.remove);
-  app.put('/prizes/:prizeId', prizes.update);
-
-  //app.post('/message/compose', messages.create);
-  //app.get('/inbox', messages.index);
-  //app.delete('/message/:msgId', messages.remove);
-  //app.put('/message/:msgId', messages.update);
+  //app.post('/prizes', prizes.create);
+  //app.get('/prizes', prizes.index);
+  //app.delete('/prizes/:prizeId', prizes.remove);
+  //app.put('/prizes/:prizeId', prizes.update);
 
   console.log('Express: Routes Loaded');
 };

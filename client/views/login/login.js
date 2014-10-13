@@ -13,7 +13,7 @@
     function successLogin(response){
       toastr.success('Welcome Back!');
       $scope.setCurrentUser(response.data.user);
-      $location.path('/dashboard');
+      $location.path('/profile');
     }
 
     function failureLogin(response){

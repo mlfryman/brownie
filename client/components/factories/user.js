@@ -20,10 +20,19 @@
       return $http.get('/checkSession');
     }
 
-    function updateProfile(){
-      return $http.put('/user');
+    function all(){
+      return $http.get('/users');
     }
-    return {register:register, login:login, logout:logout, checkSession:checkSession, updateProfile:updateProfile};
+
+    function subPoints(user){
+      return $http.put('/users/sub/' + user._id);
+    }
+
+    function addPoints(user){
+      return $http.put('/users/add/' + user._id);
+    }
+
+    return {register:register, login:login, logout:logout, checkSession:checkSession, all:all, subPoints:subPoints, addPoints:addPoints};
   }]);
 })();
 

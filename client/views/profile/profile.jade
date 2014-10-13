@@ -7,51 +7,18 @@
         .widget-image-content.text-center
           a.gravLink(href='https://en.gravatar.com/'): img.gravatar.img-circle.img-thumbnail.img-thumbnail-transparent.img-thumbnail-avatar-2x.push(alt='Create your own Gravatar!' gravatar-src-once='currentUser.email' gravatar-size="200")
           h2.widget-heading.text-light
-            strong {{currentUser.name}}
+            strong {{currentUser.fullName}}
           h4.widget-heading.text-light-op
             em {{currentUser.username}}
       .widget-content.widget-content-border
         .row.text-center
-          i.gi.gi-edit.pull-right(data-ng-click='open()')
-          .col-xs-6
+          .col-xs-12
             h3.widget-heading
               i.gi.gi-star.text-success.push
               br
               small
-                strong {{currentUser.totalPoints || 0}}
+                strong {{currentUser.points || 0}}
                 |  Brownie Points
-          .col-xs-6
-            h3.widget-heading
-              i.gi.gi-group.themed-color-social.push
-              br
-              small
-                strong {{currentUser.connections.length || 0}}
-                |  Connections
-      .widget-content.widget-content-border
-        h4 How to earn brownie points:
-        p
-          | Share a few examples of how others can get Brownie Points.
-      .widget-content.text-center
-        h4 Brownie Points
-        .btn-group
-          a.btn.btn-effect-ripple.btn-danger.pull-left(href='#modal-subPoints', data-toggle='modal')
-            i.fa.fa-minus &nbsp;
-            | Points
-          a.btn.btn-effect-ripple.btn-success.pull-right(href='#modal-addPoints', data-toggle='modal')
-            i.fa.fa-plus &nbsp;
-            | Points
   .col-md-8.col-lg-9
-    .block.full
-      // Block Tabs Title
-      .block-title
-        ul.nav.nav-tabs(data-toggle='tabs')
-          li.active
-            a(href='#profile-prizes') Prizes
-          li
-            a(href='#profile-connections') Connections
-      // END Block Tabs Title
-      // Tabs Content
-      .tab-content
-        include prizes.jade
-        include connections.jade
+    include connections
 

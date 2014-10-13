@@ -18,28 +18,21 @@
       li: a(href='/#/login') Login
     ul.nav.navbar-nav-custom.pull-right(data-ng-show='currentUser.email')
       // Search Form
-      li
-        //form.navbar-form-custom(action='/#/users/search', method='post', role='search')
-        form.navbar-form-custom(novalidate, role='search', name='searchUsers')
-          input#top-search.form-control(type='text', name='top-search', placeholder='Search users...')
-      // END Search Form
+      // li
+      //   //form.navbar-form-custom(action='/#/users/search', method='post', role='search')
+      //   form.navbar-form-custom(novalidate, role='search', name='searchUsers', data-ng-submit='submit')
+      //     input#top-search.form-control(type='text', name='top-search', placeholder='Search users...')
+      // // END Search Form
       // User Dropdown
       li.dropdown
         a.dropdown-toggle(href='javascript:void(0)', data-toggle='dropdown')
           img(gravatar-src-once='currentUser.email', alt='currentUser.username')
         ul.dropdown-menu.dropdown-menu-right
           li
-            a(href='/#/dashboard')
-              i.fa.fa-dashboard.fa-fw.pull-right
-              | Dashboard
-          li
-            a(href='/#/inbox')
-              i.fa.fa-envelope.fa-fw.pull-right
-              | Inbox
           li
             a(href='/#/profile')
               i.fa.fa-user.fa-fw.pull-right
-              | Profile
+              | My Profile
           li.divider
           li
             a(href='/#/logout')

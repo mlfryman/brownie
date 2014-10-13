@@ -16,12 +16,16 @@
     .when('/register', {templateUrl:'/views/register/register.html',   controller:'RegisterCtrl'})
     .when('/login',    {templateUrl:'/views/login/login.html',         controller:'LoginCtrl'})
     .when('/logout',   {templateUrl:'/views/logout/logout.html',       controller:'LogoutCtrl'})
-    .when('/dashboard',{templateUrl:'/views/dashboard/dashboard.html', controller:'DashboardCtrl'})
     .when('/profile',  {templateUrl:'/views/profile/profile.html',     controller:'ProfileCtrl'})
-    .when('/search',   {templateUrl:'/views/search/search.html',       controller:'SearchUsersCtrl'})
-    .when('/messages',   {templateUrl:'/views/mail/inbox.html',        controller:'MessagesCtrl'})
+    .when('/users',   {templateUrl:'/views/profile/connections.html',  controller:'ProfileCtrl'})
+    //.when('/user', users.connect);
+
+    //('/prizes', prizes.create);
+    //('/prizes', prizes.index);
+    //('/prizes/:prizeId', prizes.remove);
+    //('/prizes/:prizeId', prizes.update);
+
     .otherwise({redirectTo:'/'});
-    // redirect to 404
 
     $httpProvider.interceptors.push('HttpInterceptor');
     $localForageProvider.config({name:'brownie', storeName:'cache', version:1.0});

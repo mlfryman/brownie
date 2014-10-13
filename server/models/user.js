@@ -1,7 +1,6 @@
 'use strict';
 
 var bcrypt  = require('bcrypt'),
-    // Message = require('./message'),
     //Prize = require('./prize'),
     _       = require('underscore'),
     Mongo   = require('mongodb');
@@ -12,9 +11,8 @@ function User(o){
   this.username    = o.username;
   this.password    = bcrypt.hashSync(o.password, 10);
   this.since       = new Date();
-  this.about       = o.about;
+  this.points      = 0;
   this.connections = [];
-  //this.gravatar  = '';
 }
 
 Object.defineProperty(User, 'collection', {
@@ -33,8 +31,9 @@ User.findById = function(id, cb){
 
 User.register = function(o, cb){
   User.collection.findOne({email:o.email}, function(err, user){
-    if(user || o.password.length < 6){return cb();}
-    User.collection.save(user, cb);
+    if(user || o.password.length < 3){return cb();}
+    var u = new User(o);
+    User.collection.save(u, cb);
   });
 };
 
@@ -46,18 +45,41 @@ User.login = function(o, cb){
     cb(null, user);
   });
 };
-
-User.updateProfile = function(user, cb){
-  user._id = Mongo.ObjectID(user._id);
-  User.save(user, cb);
-};
-
 User.prototype.connect = function(updatedUser, cb){
   updatedUser._id = Mongo.ObjectID(updatedUser._id);
   User.collection.save(updatedUser, function(err, response){
     cb(updatedUser);
   });
 };
+
+User.all = function(cb){
+  User.collection.find().toArray(cb);
+};
+
+User.addPoints = function(userId, cb){
+  User.findById(userId, function(err1, user){
+    //recast MongoID
+    user._id = Mongo.ObjectID(user._id);
+    //add point
+    user.points++;
+    User.collection.save(user, function(err2){
+      cb(user);
+    });
+  });
+};
+
+User.subPoints = function(userId, cb){
+  User.findById(userId, function(err1, user){
+    //recast MongoID
+    user._id = Mongo.ObjectID(user._id);
+    //subtract point
+    user.points--;
+    User.collection.save(user, function(err2){
+      cb(user);
+    });
+  });
+};
+
 
 module.exports = User;
 
