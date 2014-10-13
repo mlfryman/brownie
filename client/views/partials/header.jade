@@ -6,8 +6,9 @@
     ul.nav.navbar-nav-custom.pull-left
       // Header Link
       li
+      li
         a(href='/#/')
-          i.gi.gi-home.pull-left &nbsp;
+          i.gi.gi-home &nbsp;
           | Home
       // END Header Link
     // END Left Header Navigation
@@ -15,11 +16,11 @@
     ul.nav.navbar-nav-custom.pull-right(data-ng-hide='currentUser.email')
       li
         a(href='/#/register')
-          i.gi.gi.user_add.pull-left &nbsp;
+          i.gi.gi.user_add &nbsp;
           | Register
       li
         a(href='/#/login')
-          i.gi.gi.keys.pull-left &nbsp;
+          i.gi.gi.keys &nbsp;
           | Login
     ul.nav.navbar-nav-custom.pull-right(data-ng-show='currentUser.email')
       li.dropdown
