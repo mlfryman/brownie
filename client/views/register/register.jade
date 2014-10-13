@@ -18,10 +18,13 @@
     form#form-register.form-horizontal(novalidate, role='form', name='userForm')
       .form-group
         .col-xs-12
-          input#register-username.form-control(type='text', name='username', data-ng-model='user.username', placeholder='Username', required, autofocus)
+          input#register-name.form-control(type='text', name='name', data-ng-model='user.fullName', placeholder='FirstName LastName', required, autofocus)
       .form-group
         .col-xs-12
           input#register-email.form-control(type='email', name='email', data-ng-model='user.email', placeholder='Email', required)
+      .form-group
+        .col-xs-12
+          input#register-username.form-control(type='text', name='username', data-ng-model='user.username', placeholder='Username', required)
       .form-group
         .col-xs-12
           input#register-password.form-control(type='password', name='password', data-ng-model='user.password', placeholder='Password', data-ng-minlength='6', required)

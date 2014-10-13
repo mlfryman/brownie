@@ -55,3 +55,49 @@
               a(href='/#/register')
                 | Sign Up Here
 
+.col-sm-6
+  a.widget(href='')
+    .widget-content.text-center
+      img.gravatar.img-circle.img-thumbnail.img-thumbnail-avatar-2x(gravatar-src-once='user.email' gravatar-size="200", alt='user.username')
+      h2.widget-heading.h3.text-muted {{user.fullName}}
+    .widget-content.themed-background-muted.text-dark.text-center
+      strong {{user.username}}
+    .widget-content
+      .row.text-center
+        .col-xs-6
+          h3.widget-heading
+            i.gi.gi-star.text-success
+            br
+            small {{user.totalPoints || 0}} Points
+        .col-xs-6
+          h3.widget-heading
+            i.gi.gi-group.text-primary
+            br
+            small {{user.connections.length || 0}} Connections
+
+// User Widgets
+.col-lg-4
+  .widget
+    .widget-content.themed-background-flat.text-center
+      a(href='javascript:void(0)')
+        img.gravatar.img-circle.img-thumbnail.img-thumbnail-avatar-2x(gravatar-src-once='user.email' gravatar-size="200", alt='user.username')
+    .widget-content.themed-background-muted.text-center
+      .btn-group
+        a.btn.btn-effect-ripple.btn-default(href='javascript:void(0)')
+          i.fa.fa-plus
+          |  Follow
+        a.btn.btn-effect-ripple.btn-default(href='javascript:void(0)')
+          i.fa.fa-eye
+          |  View Profile
+    .widget-content
+      .row.text-center
+        .col-xs-6
+          h3.widget-heading
+            small POINTS
+            br
+            | {{user.totalPoints || 0}}
+        .col-xs-6
+          h3.widget-heading
+            small CONNECTIONS
+            br
+            | {{user.connections.length || 0}}

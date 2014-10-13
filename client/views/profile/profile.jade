@@ -12,48 +12,46 @@
             em {{currentUser.username}}
       .widget-content.widget-content-border
         .row.text-center
+          i.gi.gi-edit.pull-right(data-ng-click='open()')
           .col-xs-6
             h3.widget-heading
               i.gi.gi-star.text-success.push
               br
               small
-                strong {{currentUser.totalPoints}}
+                strong {{currentUser.totalPoints || 0}}
                 |  Brownie Points
           .col-xs-6
             h3.widget-heading
               i.gi.gi-group.themed-color-social.push
               br
               small
-                strong 58.6k
+                strong {{currentUser.connections.length || 0}}
                 |  Connections
       .widget-content.widget-content-border
         h4 How to earn brownie points:
         p
-          | Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti.
-      .widget-content
-        h4 Social
+          | Share a few examples of how others can get Brownie Points.
+      .widget-content.text-center
+        h4 Brownie Points
         .btn-group
-          a.btn.btn-default(href='javascript:void(0)', data-toggle='tooltip', title='Facebook')
-            i.fa.fa-facebook.fa-fw
-          a.btn.btn-default(href='javascript:void(0)', data-toggle='tooltip', title='Twitter')
-            i.fa.fa-twitter.fa-fw
+          a.btn.btn-effect-ripple.btn-danger.pull-left(href='#modal-subPoints', data-toggle='modal')
+            i.fa.fa-minus &nbsp;
+            | Points
+          a.btn.btn-effect-ripple.btn-success.pull-right(href='#modal-addPoints', data-toggle='modal')
+            i.fa.fa-plus &nbsp;
+            | Points
   .col-md-8.col-lg-9
     .block.full
       // Block Tabs Title
       .block-title
-        .block-options.pull-right
-          a.btn.btn-effect-ripple.btn-default(href='javascript:void(0)', data-toggle='tooltip', title='Settings')
-            i.fa.fa-cog
         ul.nav.nav-tabs(data-toggle='tabs')
           li.active
-            a(href='#profile-activity') Activity
+            a(href='#profile-prizes') Prizes
           li
-            a(href='#profile-gallery') Prizes
-          li
-            a(href='#profile-followers') Connections
+            a(href='#profile-connections') Connections
       // END Block Tabs Title
       // Tabs Content
       .tab-content
-        // include ./partials/activity.jade
-        // include ./partials/prizes.jade
-        // include ./partials/connections.jade
+        include prizes.jade
+        include connections.jade
+

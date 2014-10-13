@@ -4,15 +4,22 @@
   "homepage": "https://github.com/mlfryman/brownie",
   "authors": [
     "Melanie Fryman <melanie@frymanet.com>"
-  ],
+    ],
   "description": "Brownie Points",
   "license": "MIT",
   "dependencies": {
+    "angular": "1.3.0-rc.2",
+    "angular-bootstrap": "~0.11.2",
+    "angular-gravatar": "~0.2.1",
+    "angular-localforage": "~0.2.10",
+    "angular-route": "1.3.0-rc.2",
     "bootstrap-sass-official": "~3.2.0",
     "bourbon": "~3.2.1",
     "holderjs": "~2.3.1",
+    "jquery": "~2.1.1",
     "responsive-tables": "*",
-    "angular-gravatar": "~0.2.1"
+    "toastr": "~2.0.3",
+    "underscore": "~1.7.0"
   },
   "resolutions": {
     "angular": "1.3.0-rc.2"

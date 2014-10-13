@@ -20,7 +20,10 @@
       return $http.get('/checkSession');
     }
 
-    return {register:register, login:login, logout:logout, checkSession:checkSession};
+    function updateProfile(){
+      return $http.put('/user');
+    }
+    return {register:register, login:login, logout:logout, checkSession:checkSession, updateProfile:updateProfile};
   }]);
 })();
 

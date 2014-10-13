@@ -2,13 +2,19 @@
 
 var bcrypt  = require('bcrypt'),
     // Message = require('./message'),
-    // async   = require('async'),
-    // _       = require('underscore'),
-    // fs      = require('fs'),
-    // path    = require('path'),
+    //Prize = require('./prize'),
+    _       = require('underscore'),
     Mongo   = require('mongodb');
 
-function User(){
+function User(o){
+  this.email       = o.email;
+  this.fullName    = o.fullName;
+  this.username    = o.username;
+  this.password    = bcrypt.hashSync(o.password, 10);
+  this.since       = new Date();
+  this.about       = o.about;
+  this.connections = [];
+  //this.gravatar  = '';
 }
 
 Object.defineProperty(User, 'collection', {
@@ -16,15 +22,19 @@ Object.defineProperty(User, 'collection', {
 });
 
 User.findById = function(id, cb){
-  var _id = Mongo.ObjectID(id);
-  User.collection.findOne({_id:_id}, cb);
+  var _id = Mongo.ObjectID(id),
+      user;
+  User.collection.findOne({_id:_id}, function(err, response){
+    user = Object.create(User.prototype);
+    _.extend(user, response);
+    cb(err, user);
+  });
 };
 
 User.register = function(o, cb){
   User.collection.findOne({email:o.email}, function(err, user){
     if(user || o.password.length < 6){return cb();}
-    o.password = bcrypt.hashSync(o.password, 10);
-    User.collection.save(o, cb);
+    User.collection.save(user, cb);
   });
 };
 
@@ -34,6 +44,18 @@ User.login = function(o, cb){
     var isOk = bcrypt.compareSync(o.password, user.password);
     if(!isOk){return cb();}
     cb(null, user);
+  });
+};
+
+User.updateProfile = function(user, cb){
+  user._id = Mongo.ObjectID(user._id);
+  User.save(user, cb);
+};
+
+User.prototype.connect = function(updatedUser, cb){
+  updatedUser._id = Mongo.ObjectID(updatedUser._id);
+  User.collection.save(updatedUser, function(err, response){
+    cb(updatedUser);
   });
 };
 

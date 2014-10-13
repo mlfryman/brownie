@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('brownie', ['ngRoute', 'LocalForageModule', 'ui.gravatar'])
+  angular.module('brownie', ['ngRoute', 'LocalForageModule', 'ui.gravatar', 'ui.bootstrap'])
   .constant('AUTH_EVENTS', {
     loginSuccess: 'auth-login-success',
     loginFailed: 'auth-login-failed',
