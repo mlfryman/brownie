@@ -8,6 +8,7 @@ var morgan         = require('morgan'),
     debug          = require('../lib/debug'),
     security       = require('../lib/security'),
     home           = require('../controllers/home'),
+    //prizes         = require('../controllers/prizes'),
     users          = require('../controllers/users');
 
 module.exports = function(app, express){
@@ -24,13 +25,22 @@ module.exports = function(app, express){
   app.get('/home', home.index);
   app.post('/register', users.register);
   app.post('/login', users.login);
-  app.post('/dashboard', users.dashboard);
-  app.post('/profile', users.profile);
   //session check
   app.get('/checkSession', users.checkSession);
 
   app.use(security.bounce);
   app.delete('/logout', users.logout);
+  app.get('/users', users.index);
+  app.put('/users/add/:userId', users.addPoints);
+  app.put('/users/sub/:userId', users.subPoints);
+  //app.put('/user', users.connect);
+  //app.put('/user', users.updateProfile);
+  //app.get('/profile', users.showProfile);
+
+  //app.post('/prizes', prizes.create);
+  //app.get('/prizes', prizes.index);
+  //app.delete('/prizes/:prizeId', prizes.remove);
+  //app.put('/prizes/:prizeId', prizes.update);
 
   console.log('Express: Routes Loaded');
 };

@@ -18,19 +18,18 @@
     form#form-register.form-horizontal(novalidate, role='form', name='userForm')
       .form-group
         .col-xs-12
-          input#register-username.form-control(type='text', name='username', data-ng-model='user.username', placeholder='Username', required, autofocus)
+          input#register-name.form-control(type='text', name='name', data-ng-model='user.fullName', placeholder='FirstName LastName', required, autofocus)
       .form-group
         .col-xs-12
           input#register-email.form-control(type='email', name='email', data-ng-model='user.email', placeholder='Email', required)
       .form-group
         .col-xs-12
+          input#register-username.form-control(type='text', name='username', data-ng-model='user.username', placeholder='Username', required)
+      .form-group
+        .col-xs-12
           input#register-password.form-control(type='password', name='password', data-ng-model='user.password', placeholder='Password', data-ng-minlength='6', required)
       .form-group.form-actions
         .col-xs-6
-          label.csscheckbox.csscheckbox-primary(data-toggle='tooltip', title='Agree to the terms')
-            input#register-terms(type='checkbox', name='register-terms', required)
-            span
-          a(href='#modal-terms', data-toggle='modal') Terms
         .col-xs-6.text-right
           button.btn.btn-effect-ripple.btn-success(data-ng-show='userForm.$valid', data-ng-click='register()')
             i.fa.fa-plus

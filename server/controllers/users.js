@@ -2,12 +2,6 @@
 
 var User = require('../models/user');
 
-exports.dashboard = function(req, res){
-};
-
-exports.profile = function(req, res){
-};
-
 exports.register = function(req, res){
   User.register(req.body, function(err, user){
     if(user){
@@ -53,5 +47,23 @@ exports.checkSession = function(req, res){
     //this is handled client side
     res.send({user: {username: 'Anonymous'}});
   }
+};
+
+exports.index = function(req, res){
+  User.all(function(err, users){
+    res.send({users:users});
+  });
+};
+
+exports.addPoints = function(req, res){
+  User.addPoints(req.params.userId, function(err, user){
+    res.send({user:user});
+  });
+};
+
+exports.subPoints = function(req, res){
+  User.subPoints(req.params.userId, function(err, user){
+    res.send({user:user});
+  });
 };
 

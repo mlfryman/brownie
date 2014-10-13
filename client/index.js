@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('brownie', ['ngRoute', 'LocalForageModule', 'ui.gravatar'])
+  angular.module('brownie', ['ngRoute', 'LocalForageModule', 'ui.gravatar', 'ui.bootstrap'])
   .constant('AUTH_EVENTS', {
     loginSuccess: 'auth-login-success',
     loginFailed: 'auth-login-failed',
@@ -16,12 +16,10 @@
     .when('/register', {templateUrl:'/views/register/register.html',   controller:'RegisterCtrl'})
     .when('/login',    {templateUrl:'/views/login/login.html',         controller:'LoginCtrl'})
     .when('/logout',   {templateUrl:'/views/logout/logout.html',       controller:'LogoutCtrl'})
-    .when('/dashboard',{templateUrl:'/views/dashboard/dashboard.html', controller:'DashboardCtrl'})
     .when('/profile',  {templateUrl:'/views/profile/profile.html',     controller:'ProfileCtrl'})
-    .when('/search',   {templateUrl:'/views/search/search.html',       controller:'SearchUsersCtrl'})
-    .when('/messages',   {templateUrl:'/views/mail/inbox.html',        controller:'MessagesCtrl'})
-    .otherwise({redirectTo:'/'});
-    // redirect to 404
+    .when('/users',    {templateUrl:'/views/profile/connections.html', controller:'ProfileCtrl'})
+    .when('/404',      {templateUrl:'/views/errors/404.html',          controller:'ErrorsCtrl'})
+    .otherwise({redirectTo:'/404'});
 
     $httpProvider.interceptors.push('HttpInterceptor');
     $localForageProvider.config({name:'brownie', storeName:'cache', version:1.0});
