@@ -1,37 +1,37 @@
-## name of project
+Brownie Points
+==============================
 ### Code Badges
-build status icon
-coverage status icon
+- build status icon forthcoming
+- coverage status icon forthcoming
 
 ### Screenshots
-![Image1](https://raw.githubusercontent.com/nss-cohort-2014-06-07/express-template/master/docs/screenshots/one.jpg)
-![Image2](https://raw.githubusercontent.com/nss-cohort-2014-06-07/express-template/master/docs/screenshots/two.jpg)
+- forthcoming
 
 ### Description
 write a description about your project
 
 ### Models
 ```
-Model 1
-```
-
-```
-Model 2
+User
 ```
 
 ### Database
 ```
-Collecion 1
-```
-
-```
-Collection 2
+User
 ```
 
 ### Features
-- [x] Feature 1
-- [ ] Feature 2
-- [x] Feature 3
+- [x] User accounts
+- [x] Add & subtract brownie points from your connections
+- [x] Buy prizes with your points
+- [x] Buy prizes with your points
+- [ ] Add your own prizes
+- [ ] Friend/unfriend users
+- [ ] Brownie points tracked by user
+- [ ] Direct messaging
+- [ ] Account email notifications (e.g., welcome new user, forgot password, new feature)
+- [ ] Activity feed
+- [ ] Social integration
 
 ### Running Tests
 ```bash
