@@ -30,10 +30,6 @@
           input#register-password.form-control(type='password', name='password', data-ng-model='user.password', placeholder='Password', data-ng-minlength='6', required)
       .form-group.form-actions
         .col-xs-6
-          label.csscheckbox.csscheckbox-primary(data-toggle='tooltip', title='Agree to the terms')
-            input#register-terms(type='checkbox', name='register-terms', required)
-            span
-          a(href='#modal-terms', data-toggle='modal') Terms
         .col-xs-6.text-right
           button.btn.btn-effect-ripple.btn-success(data-ng-show='userForm.$valid', data-ng-click='register()')
             i.fa.fa-plus

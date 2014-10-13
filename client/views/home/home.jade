@@ -1,11 +1,24 @@
-#landing
-.row
-  .col-xs-3
-  .col-xs-6
-    div.jumbotron
-      h1 Brownie Points
-        p You know those etherial brownie points people give out?
-        p With Brownie Points, you can praise your buddies by awarding brownie points for their good deeds. If your buddy turns out to not be your pal, take those points back!
-        p Been hoarding brownie points? Cash out on an array of prizes!
-      a.btn.btn-primary.btn-lg(href='/#/register') Get Started
-  .col-xs-3
+#login-container
+  // Login Header
+  h1.h2.text-light.text-center.push-top-bottom.animation-slideDown
+    i.fa.fa-star
+    strong Welcome to Brownie Points
+  // END Login Header
+  // Login Block
+  .block.animation-fadeInQuickInv
+      div.jumbotron
+        h1 Brownie Points
+          p You know those etherial brownie points people give out?
+          p With Brownie Points, you can praise your buddies by awarding brownie points for their good deeds. If your buddy turns out to not be your pal, take those points back!
+          p Been hoarding brownie points? Cash out on an array of prizes!
+        a.btn.btn-primary.btn-lg(href='/#/register') Get Started
+  // END Login Block
+  // Footer
+  footer.text-muted.text-center.animation-pullUp
+    small
+      span#year-copy
+      |  &copy; 2014
+      | Melanie L. Fryman
+  // END Footer
+// END Login Container
+
