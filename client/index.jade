@@ -26,7 +26,7 @@ html.no-js(ng-app='brownie', lang='en')
     // Related styles of various icon packs and plugins
     link(rel='stylesheet', href='/vendor/template/css/plugins.css')
     link(rel='stylesheet', href='/vendor/toastr/toastr.css')
-    // The main stylesheet of this template. All Bootstrap overwrites are defined in here
+    // The main stylesheet. All Bootstrap overwrites are defined in here
     link(rel='stylesheet', href='/vendor/template/css/main.css')
     link(rel='stylesheet', href='/index.css')
     // The themes stylesheet of this template (for using specific theme color in individual elements - must included last)
@@ -37,8 +37,8 @@ html.no-js(ng-app='brownie', lang='en')
     //include nav
     // Page Wrapper
     #page-wrapper.page-loading
-      // Preloader
-      // Preloader functionality (initialized in js/app.js) - pageLoading()
+      // PRELOADER
+      /- NOTE: preloader functionality (initialized in js/app.js) - pageLoading()
       // Used only if page preloader enabled from by adding the class 'page-loading' in #page-wrapper element
       .preloader
         .inner
@@ -47,12 +47,13 @@ html.no-js(ng-app='brownie', lang='en')
           // Text for IE9
           h3.text-primary.visible-lt-ie10
             strong Loading...
-      // Page Container
+      // PAGE CONTAINER
       #page-container.header-fixed-top.sidebar-visible-lg-full
-        // Alternative Sidebar
-        // Main Sidebar
+        // ALTERNATIVE SIDEBAR
+        // MAIN SIDEBAR
+        // NOTE: I removed sidebar in demo because it was interfering with the splash page
         //include ./views/partials/sidebar
-        // Main Container
+        // MAIN CONTAINER
         include ./views/partials/header
 
     script(src='/vendor/jquery/dist/jquery.min.js')
