@@ -1,7 +1,7 @@
 Brownie Points
 ==============================
 ### Code Badges
-- build status icon forthcoming
+[![Build Status](https://travis-ci.org/mlfryman/brownie.svg)](https://travis-ci.org/mlfryman/brownie)
 - coverage status icon forthcoming
 
 ### Screenshots
